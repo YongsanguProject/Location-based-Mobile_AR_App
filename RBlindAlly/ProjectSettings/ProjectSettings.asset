@@ -719,9 +719,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 0a1e87e9-681a-4fc3-b64d-ec984e9fc256
-  projectName: RBlindAlly (1)
-  organizationId: nyongjay
+  cloudProjectId: 8b62693c-963c-4126-bf0e-bff3a9f0df91
+  projectName: RBlindAlly
+  organizationId: soochoi0325
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
