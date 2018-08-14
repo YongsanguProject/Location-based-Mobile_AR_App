@@ -8,13 +8,13 @@ public class Info_Next : MonoBehaviour,IPointerClickHandler {
 
     public RawImage ParkInfo;
     public RawImage InfoMini;
-
+    public bool game_start = false;
     public void OnPointerClick(PointerEventData eventData)
     {
         Destroy(ParkInfo, 1f);
         RawImage rim = InfoMini.GetComponent<RawImage>();
         rim.enabled = true;
-        Debug.Log("클릭됨");
+        game_start = true;
     }
     // Use this for initialization
     void Start () {

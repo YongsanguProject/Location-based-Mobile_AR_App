@@ -10,6 +10,7 @@ public class MovingVehicle : MonoBehaviour {
     float delta = 1f;
 
     public bool is_stop;
+    public bool destroy = false;
     public bool check;
     public int rot;
 	// Use this for initialization
@@ -63,6 +64,7 @@ public class MovingVehicle : MonoBehaviour {
         else{
             stopping(Vehicle);
             is_stop = true;
+            destroy = true;
         }
 
         RectTransform vt2 = Vehicle2.GetComponent<RectTransform>();

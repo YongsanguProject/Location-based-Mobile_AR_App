@@ -8,83 +8,138 @@ public class ParkEmerge : MonoBehaviour {
     public RawImage NotPark1;
     public RawImage NotPark2;
 
-    float delta = 10f;
-    public int count;
-    public bool check;
+    public RawImage Vehicle1;
+    public RawImage Vehicle2;
+    public RawImage Vehicle3;
 
-    public FindParkDialog fpd;
+
+    public bool c1, c2, c3 = true;
+
+    float delta = 10f;
+
+
+    int num = 0;
+    public Info_Next inf;
 	// Use this for initialization
 	void Start () {
-        RectTransform rp = RealPark.GetComponent<RectTransform>();
-        rp.position = new Vector3(800f
-                                 , -50f
-                                 , 0);
 
-        RectTransform np1 = NotPark1.GetComponent<RectTransform>();
-        np1.position = new Vector3(1100f
-                                 , 200f
-                                 , 0);
-
-        RectTransform np2 = NotPark2.GetComponent<RectTransform>();
-        np2.position = new Vector3(1350f
-                                 , 500f
-                                 , 0);
-
-        count = 0;
-        check = true;
     }
 	
     void MovingPark(RawImage park){
 
         RectTransform pr = park.GetComponent<RectTransform>();
-        for ( count = 0; count < 20; count++)
-        {
-            pr.position = new Vector3(pr.position.x
-                                     , pr.position.y + delta
-                                     , 0);
-        }
-        for (count = 20; count > 0 ; count--)
-        {
-            pr.position = new Vector3(pr.position.x
-                                     , pr.position.y - delta
-                                     , 0);
-        }
+
+        pr.position = new Vector3(pr.position.x
+                                  , pr.position.y + delta
+                                  , 0);
+
 
 
     }
-	// Update is called once per frame
-	void Update () {
-        
-        if (fpd.game_start)
+
+    void MovingParkBack(RawImage park)
+    {
+
+        RectTransform pr = park.GetComponent<RectTransform>();
+
+        pr.position = new Vector3(pr.position.x
+                                  , pr.position.y - delta
+                                  , 0);
+
+
+
+    }
+    // Update is called once per frame
+    void Update () {
+        RectTransform vh1 = Vehicle1.GetComponent<RectTransform>();
+        RectTransform vh2 = Vehicle2.GetComponent<RectTransform>();
+        RectTransform vh3 = Vehicle3.GetComponent<RectTransform>();
+
+        RectTransform rp = RealPark.GetComponent<RectTransform>();
+        RectTransform np1 = NotPark1.GetComponent<RectTransform>();
+        RectTransform np2 = NotPark2.GetComponent<RectTransform>();
+
+        RawImage rrp = RealPark.GetComponent<RawImage>();
+        RawImage rnp1 = NotPark1.GetComponent<RawImage>();
+        RawImage rnp2 = NotPark2.GetComponent<RawImage>();
+        if (inf.game_start)
         {
-            RawImage rrp = RealPark.GetComponent<RawImage>();
+            
+            rp.position = new Vector3(vh1.position.x
+                                     , vh1.position.y
+                                     , vh1.position.z);
+
+            
+            np1.position = new Vector3(vh2.position.x
+                                     , vh2.position.y
+                                     , vh2.position.z);
+
+            
+            np2.position = new Vector3(vh3.position.x
+                                     , vh3.position.y
+                                     , vh3.position.z);
+
+            
+
             rrp.enabled = true;
-
-            RawImage rnp1 = NotPark1.GetComponent<RawImage>();
             rnp1.enabled = true;
-
-            RawImage rnp2 = NotPark2.GetComponent<RawImage>();
             rnp2.enabled = true;
+            inf.game_start = false;
+        }
 
-
-            System.Random random = new System.Random();
-            int num = random.Next(0, 2);
-
-
-            switch (num)
-            {
-                case 0:
+        
+        
+        switch (num){
+            case 0:
+                if (rp.position.y < (vh1.position.y + 250f) && c1)
+                {
                     MovingPark(RealPark);
-                    break;
-                case 1:
+                }
+                else if (rp.position.y > (vh1.position.y + 20f))
+                {
+                    c1 = false;
+                    MovingParkBack(RealPark);
+                }
+                else{
+                    System.Random random = new System.Random();
+                    num = random.Next(0, 3);
+                    c1 = true;
+                }
+                break;
+            case 1:
+                if (np1.position.y < (vh2.position.y + 250f) && c2)
+                {
                     MovingPark(NotPark1);
-                    break;
-                case 2:
+                }
+                else if (np1.position.y > (vh2.position.y + 20f))
+                {
+                    c2 = false;
+                    MovingParkBack(NotPark1);
+                }
+                else{
+                    System.Random random = new System.Random();
+                    num = random.Next(0, 3);
+                    c2 = true;
+                }
+                break;
+            case 2:
+                if (np2.position.y < (vh3.position.y + 250f) && c3)
+                {
                     MovingPark(NotPark2);
-                    break;
+                }
+                else if (np2.position.y > (vh3.position.y + 20f))
+                {
+                    c3 = false;
+                    MovingParkBack(NotPark2);
+                }
+                else{
+                    System.Random random = new System.Random();
+                    num = random.Next(0, 3);
+                    c3 = true;
+                }
+                break;
             }
         }
 
-        
-    }
+       
 }

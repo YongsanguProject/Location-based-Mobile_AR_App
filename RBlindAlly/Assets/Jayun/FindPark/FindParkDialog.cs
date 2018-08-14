@@ -9,7 +9,6 @@ public class FindParkDialog : MonoBehaviour {
     public RawImage ParkInfo;
     public RawImage InfoMini;
 
-    public bool game_start = false;
     int delta = 10;
 	// Use this for initialization
 	void Start () {
@@ -41,6 +40,7 @@ public class FindParkDialog : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
+
         RawImage rfp = FindPark.GetComponent<RawImage>();
         RawImage rpi = ParkInfo.GetComponent<RawImage>();
         RawImage rim = InfoMini.GetComponent<RawImage>();
@@ -49,16 +49,14 @@ public class FindParkDialog : MonoBehaviour {
         if (mv.is_stop)
         {
             rfp.enabled = true;
-            if (FindPark)
+            if (mv.destroy)
             {
                 Destroy(FindPark, 2.5f);
+                mv.destroy = false;
             }
             
+            
             if ( t.position.y >= 1000f) DropDown();
-            //**
-            Destroy(ParkInfo, 6.5f);
-            rim.enabled = true;
-            game_start = true;
         }
 
     }
