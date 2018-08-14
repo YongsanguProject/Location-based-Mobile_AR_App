@@ -21,12 +21,15 @@ EditorBuildSettings:
     path: Assets/Scenes/RBlindAlly + LibraryRR.unity
     guid: eba1d5719607e2242b9d4f296fb8e159
   - enabled: 0
-    path: Assets/Scenes/TimeTest.unity
+    path: Assets/Scenes/Final/TimeTest.unity
     guid: 9e2db7b7fd2f1074da7a9848da2c35cd
   - enabled: 0
     path: Assets/Scenes/Sundarae + SoonheonPondSecond.unity
     guid: 2d23f6197be95c8408e3f830141d0a7c
-  - enabled: 1
-    path: Assets/Scenes/Test.unity
+  - enabled: 0
+    path: Assets/Scenes/Final/Test.unity
     guid: 27ee13916e85d694fba8984817998de3
+  - enabled: 1
+    path: Assets/Scenes/FindPark.unity
+    guid: f18a586ca71253d4faaef64f046ce1cc
   m_configObjects: {}
