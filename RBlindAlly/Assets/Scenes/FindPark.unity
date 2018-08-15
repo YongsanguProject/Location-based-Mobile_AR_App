@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 41887033}
   - component: {fileID: 41887035}
   - component: {fileID: 41887036}
+  - component: {fileID: 41887037}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -198,6 +199,27 @@ MonoBehaviour:
   FindPark: {fileID: 445530971}
   ParkInfo: {fileID: 1546087480}
   InfoMini: {fileID: 262765470}
+  Next_btn: {fileID: 0}
+--- !u!114 &41887037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 41887032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0959b40c528f6764f89b0d7a6048e5f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inf: {fileID: 2112190901}
+  Wrong2: {fileID: 1292961279}
+  Wrong3: {fileID: 909947113}
+  Vehicle1: {fileID: 2012446049}
+  Vehicle2: {fileID: 1173051154}
+  Vehicle3: {fileID: 698277607}
+  correct: 0
+  wrong2: 0
+  wrong3: 0
 --- !u!1 &99383479
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,7 +601,7 @@ GameObject:
   - component: {fileID: 909947114}
   - component: {fileID: 909947113}
   m_Layer: 5
-  m_Name: Wrong2
+  m_Name: Wrong3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -593,7 +615,7 @@ RectTransform:
   m_GameObject: {fileID: 909947111}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2}
   m_Children: []
   m_Father: {fileID: 382181812}
   m_RootOrder: 10
@@ -765,6 +787,7 @@ GameObject:
   - component: {fileID: 976748255}
   - component: {fileID: 976748257}
   - component: {fileID: 976748256}
+  - component: {fileID: 976748258}
   m_Layer: 5
   m_Name: NotPark1
   m_TagString: Untagged
@@ -823,6 +846,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 976748254}
   m_CullTransparentMesh: 0
+--- !u!114 &976748258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 976748254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57f9c265c0f3a0540a8ffe0ea49f6874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cw: {fileID: 41887037}
 --- !u!1 &1173051151
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,7 +937,7 @@ GameObject:
   - component: {fileID: 1292961280}
   - component: {fileID: 1292961279}
   m_Layer: 5
-  m_Name: Wrong1
+  m_Name: Wrong2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -916,7 +951,7 @@ RectTransform:
   m_GameObject: {fileID: 1292961277}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2}
   m_Children: []
   m_Father: {fileID: 382181812}
   m_RootOrder: 9
@@ -969,6 +1004,7 @@ GameObject:
   - component: {fileID: 1544271095}
   - component: {fileID: 1544271097}
   - component: {fileID: 1544271096}
+  - component: {fileID: 1544271098}
   m_Layer: 5
   m_Name: Park
   m_TagString: Untagged
@@ -1027,6 +1063,17 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1544271094}
   m_CullTransparentMesh: 0
+--- !u!114 &1544271098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1544271094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad173fe932377746b29398b1c025b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1546087478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,6 +1370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ParkInfo: {fileID: 1546087480}
   InfoMini: {fileID: 262765470}
+  Button: {fileID: 2112190898}
   game_start: 0
 --- !u!1 &2117221532
 GameObject:
@@ -1334,6 +1382,7 @@ GameObject:
   - component: {fileID: 2117221533}
   - component: {fileID: 2117221535}
   - component: {fileID: 2117221534}
+  - component: {fileID: 2117221536}
   m_Layer: 5
   m_Name: NotPark2
   m_TagString: Untagged
@@ -1392,3 +1441,15 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2117221532}
   m_CullTransparentMesh: 0
+--- !u!114 &2117221536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2117221532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd1ed177419ea1409f520cbe738e383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cw: {fileID: 41887037}

@@ -8,8 +8,10 @@ public class FindParkDialog : MonoBehaviour {
     public RawImage FindPark;
     public RawImage ParkInfo;
     public RawImage InfoMini;
-
+    public RawImage Next_btn;
     int delta = 10;
+
+    float infoTime = 0;
 	// Use this for initialization
 	void Start () {
 		RawImage rfp = FindPark.GetComponent<RawImage>();
@@ -48,14 +50,14 @@ public class FindParkDialog : MonoBehaviour {
         RectTransform t = ParkInfo.GetComponent<RectTransform>();
         if (mv.is_stop)
         {
+
             rfp.enabled = true;
+
             if (mv.destroy)
             {
                 Destroy(FindPark, 2.5f);
-                mv.destroy = false;
             }
-            
-            
+
             if ( t.position.y >= 1000f) DropDown();
         }
 

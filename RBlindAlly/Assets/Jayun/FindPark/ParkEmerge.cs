@@ -84,7 +84,7 @@ public class ParkEmerge : MonoBehaviour {
             rrp.enabled = true;
             rnp1.enabled = true;
             rnp2.enabled = true;
-            inf.game_start = false;
+            
         }
 
         
