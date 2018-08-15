@@ -7,7 +7,7 @@ public class LibraryBox : MonoBehaviour {
     public RawImage getimg;
     public Text box;
     public GameObject imgtg;
-
+    public CountBox cb;
 	// Use this for initialization
 	void Start () {
         getimg.gameObject.SetActive(false);
@@ -31,7 +31,7 @@ public class LibraryBox : MonoBehaviour {
                 box.gameObject.SetActive(false);
                 imgtg.SetActive(false);
                 Destroy(getimg.gameObject, 2.0f);
-
+                cb.countBox++;
             }
         }
 
