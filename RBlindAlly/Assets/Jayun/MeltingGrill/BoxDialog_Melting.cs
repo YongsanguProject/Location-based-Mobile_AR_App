@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using Vuforia;
 
-public class BoxDialog : MonoBehaviour
+public class BoxDialog_Melting : MonoBehaviour
 {
-    public BoxTracking obj_box;
-    public BoxSelect box_select;
+    public BoxTracking_Melting obj_box;
+    public BoxSelect_Melting box_select;
     public Text box_guide;
 
     void Start()

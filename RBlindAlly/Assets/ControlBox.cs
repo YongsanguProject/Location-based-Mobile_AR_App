@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ControlBox : MonoBehaviour {
     public Text Clicktext;
     public RawImage GetImage;
+    public CountBox cb;
 
     // Use this for initialization
     void Start()
@@ -32,6 +33,7 @@ public class ControlBox : MonoBehaviour {
                 Clicktext.text = " ";
                 Destroy(GetImage.gameObject,2.0f);
 
+                cb.countBox++;
 
 
 

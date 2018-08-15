@@ -10,6 +10,8 @@ public class Catch_Box : MonoBehaviour {
     private Vector3 offset;
     public RawImage getBox;
 
+    public CountBox cb;
+
     public bool box_net_col;
     public GameObject box;
 
@@ -47,6 +49,7 @@ public class Catch_Box : MonoBehaviour {
                         Destroy(how_to);
                         Destroy(gameObject);
                         Destroy(box);
+                        cb.countBox++;
                     }
                     
                 }
