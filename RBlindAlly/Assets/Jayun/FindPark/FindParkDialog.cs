@@ -58,7 +58,7 @@ public class FindParkDialog : MonoBehaviour {
                 Destroy(FindPark, 2.5f);
             }
 
-            if ( t.position.y >= 1000f) DropDown();
+            if ( t.position.y >= 1200f) DropDown();
         }
 
     }

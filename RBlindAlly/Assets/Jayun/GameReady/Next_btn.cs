@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CheckPark : MonoBehaviour, IPointerClickHandler
+public class Next_btn : MonoBehaviour, IPointerClickHandler
 {
-    public string NextSceneString;
+    public Btn_Control bc;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Application.LoadLevel(NextSceneString);
-    }
+        if (bc.page < 4)
+        {
+        bc.page++;
+        }
 
+    }
     // Use this for initialization
     void Start () {
 		

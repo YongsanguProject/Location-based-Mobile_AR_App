@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CheckPark : MonoBehaviour, IPointerClickHandler
+public class Prev_btn : MonoBehaviour, IPointerClickHandler
 {
-    public string NextSceneString;
+    public Btn_Control bc;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Application.LoadLevel(NextSceneString);
+        if (bc.page >= 0) bc.page--;
     }
 
     // Use this for initialization

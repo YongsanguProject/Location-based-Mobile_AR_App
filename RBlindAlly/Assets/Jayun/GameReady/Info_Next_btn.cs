@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CheckPark : MonoBehaviour, IPointerClickHandler
-{
-    public string NextSceneString;
+public class Info_Next_btn : MonoBehaviour,IPointerClickHandler{
+    public Btn_Control bc;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Application.LoadLevel(NextSceneString);
+        if (bc.page < 6)
+        {
+            bc.page++;
+        }
     }
-
-    // Use this for initialization
-    void Start () {
+        // Use this for initialization
+        void Start () {
 		
 	}
 	
