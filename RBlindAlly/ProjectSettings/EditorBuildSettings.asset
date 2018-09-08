@@ -26,19 +26,28 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Sundarae + SoonheonPondSecond.unity
     guid: 2d23f6197be95c8408e3f830141d0a7c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FindPark.unity
     guid: f18a586ca71253d4faaef64f046ce1cc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameReady.unity
     guid: ccd88c8bf5188a0418dbd9dd6e8a3208
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Final/Test.unity
     guid: 27ee13916e85d694fba8984817998de3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Documents.unity
     guid: a19b2459d206cf249853bd78b55ef178
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Ending.unity
     guid: 6ee92778fff6d7e4f86a34d454e8fbfc
+  - enabled: 1
+    path: Assets/Scenes/HyoChang/GrowTree.unity
+    guid: 079dff76f734bd64e98ff38a9ece4075
+  - enabled: 1
+    path: Assets/Scenes/HyoChang/Question.unity
+    guid: 54e840bc4d32c7048be7dd71308ec805
+  - enabled: 1
+    path: Assets/Scenes/HyoChang/GiveFlower.unity
+    guid: 6229aff0de42a9446ad8c4799146bcf4
   m_configObjects: {}

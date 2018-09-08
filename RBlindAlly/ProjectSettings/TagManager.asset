@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Maingrass1
+  - Box
+  - Net
+  - Flower
+  - Flag
+  - Tree
   layers:
   - Default
   - TransparentFX
