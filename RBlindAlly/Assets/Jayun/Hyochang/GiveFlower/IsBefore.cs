@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-public class RetryBtn : MonoBehaviour, IPointerClickHandler
+public class IsBefore : MonoBehaviour, IPointerClickHandler
 {
-    public RandomQuiz rq;
+    public Dialog dg;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        rq.qlock = true;
-        rq.rcv.gameObject.SetActive(false);
+        dg.page--;
     }
     // Use this for initialization
     void Start()

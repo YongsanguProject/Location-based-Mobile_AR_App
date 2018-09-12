@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Touch_Flower : MonoBehaviour {
 
     public bool is_touch;
-
+    public RandomQuiz rq;
 	// Use this for initialization
 	void Start () {
         is_touch = false;
@@ -14,13 +14,17 @@ public class Touch_Flower : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
+        if (Input.GetMouseButtonDown(0))
         {
-            if (hit.transform.tag == "Flower")
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
             {
-                is_touch = true;
+                if (hit.transform.tag == "Flower")
+                {
+                    is_touch = true;
+                    rq.qlock = true;
+                }
             }
         }
     }

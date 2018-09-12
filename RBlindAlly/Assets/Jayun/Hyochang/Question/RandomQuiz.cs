@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class RandomQuiz : MonoBehaviour
 {
     public Touch_Flower tf;
-
+    
     public FlowerEmerge fe;
 
     public Canvas rcv;//retry Canvas
@@ -25,10 +25,10 @@ public class RandomQuiz : MonoBehaviour
 
     public Text retryText;
     int num = 0;
-    public bool qlock = true;
+    public bool qlock = false;
 
 
-    public int right_num = 0;
+    public int right_num = 0;       //정답 맞춘 개수
     bool answerb;
     public bool getff = false;
     public bool next = false;
@@ -77,13 +77,13 @@ public class RandomQuiz : MonoBehaviour
                 wrong.gameObject.SetActive(true);
                 System.Random random = new System.Random();
                 num = random.Next(0, quiz.Length);
-                if (!check[num])
+                if (!check[num])            //아직 나오지않은 문제면
                 {
                     Text t = text.GetComponent<Text>();
                     check[num] = true;
                     answerb = answer[num];
                     t.text = quiz[num];
-                    qlock = false;
+                    qlock = false;          //문제 반복되지않도록 qlock끄기
                 }
 
             }
@@ -98,12 +98,12 @@ public class RandomQuiz : MonoBehaviour
                 right.gameObject.SetActive(false);
                 wrong.gameObject.SetActive(false);
                 getBtn.gameObject.SetActive(true);
-
+                rcv.gameObject.SetActive(false);
                 if (getff)      //꽃 줍기
                 {
                     cv.gameObject.SetActive(false);
                     cv_answer.gameObject.SetActive(true);   //꽃잎획득 canvas
-
+                    getBtn.gameObject.SetActive(false);
                     time += Time.deltaTime;
                     if (time > 1.5f)
                     {
@@ -147,13 +147,13 @@ public class RandomQuiz : MonoBehaviour
                         rt.text = "안타깝지만 여기서는 줍지 못할 것 같군……. 다른 장소로 가봅시다.";
                         retryBtn.gameObject.SetActive(false);
                         moveBtn.gameObject.SetActive(false);
+                        tf.is_touch = false;        //꽃 다시 선택가능하도록(다른 위치 꽃)
                         if (move_time < 1.5f)
                         {
-                            rcv.gameObject.SetActive(false);
-                            time += Time.deltaTime;
-
-                            //1.5초후 rcv도 setActive(false)
+                            
+                            move_time += Time.deltaTime;
                         }
+                        else { rcv.gameObject.SetActive(false);}
                     }
 
                 }

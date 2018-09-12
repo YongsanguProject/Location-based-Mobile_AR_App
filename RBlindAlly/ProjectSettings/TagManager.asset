@@ -10,6 +10,8 @@ TagManager:
   - Flower
   - Flag
   - Tree
+  - Button
+  - FlowerFlag
   layers:
   - Default
   - TransparentFX

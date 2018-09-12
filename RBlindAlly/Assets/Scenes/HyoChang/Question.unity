@@ -429,11 +429,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 413818, guid: b05c25d12ca0fe24e9b0c4dc55d4100c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.825
+      value: -1.72
       objectReference: {fileID: 0}
     - target: {fileID: 413818, guid: b05c25d12ca0fe24e9b0c4dc55d4100c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.22
       objectReference: {fileID: 0}
     - target: {fileID: 413818, guid: b05c25d12ca0fe24e9b0c4dc55d4100c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1379,7 +1379,7 @@ GameObject:
   - component: {fileID: 1235367687}
   m_Layer: 0
   m_Name: ARCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1852,6 +1852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   is_touch: 0
+  rq: {fileID: 1502439999}
 --- !u!4 &1502440001
 Transform:
   m_ObjectHideFlags: 0
@@ -2114,6 +2115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rq: {fileID: 1502439999}
+  tf: {fileID: 1502440000}
 --- !u!1 &1595331169
 GameObject:
   m_ObjectHideFlags: 0

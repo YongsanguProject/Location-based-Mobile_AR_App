@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-public class RetryBtn : MonoBehaviour, IPointerClickHandler
+public class SelectKimGu : MonoBehaviour, IPointerClickHandler
 {
-    public RandomQuiz rq;
-
+    public BloomFlowerFlag bff;
+    public TombstoneDialog tb;
+    
     public void OnPointerClick(PointerEventData eventData)
     {
-        rq.qlock = true;
-        rq.rcv.gameObject.SetActive(false);
+        bff.is_select = true;
+        tb.charSelect = 1;
     }
     // Use this for initialization
     void Start()
