@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-public class RetryBtn : MonoBehaviour, IPointerClickHandler
+public class BIsNext : MonoBehaviour, IPointerClickHandler
 {
-    public RandomQuiz rq;
+    public string NextSceneString;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        rq.qlock = true;
-        rq.rcv.gameObject.SetActive(false);
+        Application.LoadLevel(NextSceneString);
     }
+
     // Use this for initialization
     void Start()
     {

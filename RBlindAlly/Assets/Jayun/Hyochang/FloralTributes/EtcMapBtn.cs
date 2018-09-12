@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-public class RetryBtn : MonoBehaviour, IPointerClickHandler
+using UnityEngine.UI;
+public class EtcMapBtn : MonoBehaviour, IPointerClickHandler
 {
-    public RandomQuiz rq;
+    public Canvas mc;
+    public RawImage map;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        rq.qlock = true;
-        rq.rcv.gameObject.SetActive(false);
+        mc.gameObject.SetActive(true);
+        map.gameObject.SetActive(true);
     }
+
     // Use this for initialization
     void Start()
     {

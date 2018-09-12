@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-public class RetryBtn : MonoBehaviour, IPointerClickHandler
+public class IsTbNext : MonoBehaviour, IPointerClickHandler
 {
-    public RandomQuiz rq;
+    public TombstoneDialog tb;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        rq.qlock = true;
-        rq.rcv.gameObject.SetActive(false);
+        tb.page++;
     }
     // Use this for initialization
     void Start()

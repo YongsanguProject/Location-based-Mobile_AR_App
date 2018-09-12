@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-public class RetryBtn : MonoBehaviour, IPointerClickHandler
+using UnityEngine.UI;
+public class CloseMapBtn : MonoBehaviour, IPointerClickHandler
 {
-    public RandomQuiz rq;
+    public Canvas mc;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        rq.qlock = true;
-        rq.rcv.gameObject.SetActive(false);
+        mc.gameObject.SetActive(false);
     }
+
     // Use this for initialization
     void Start()
     {
