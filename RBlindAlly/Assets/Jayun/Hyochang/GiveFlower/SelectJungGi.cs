@@ -5,12 +5,12 @@ using UnityEngine.EventSystems;
 public class SelectJungGi : MonoBehaviour, IPointerClickHandler
 {
     public BloomFlowerFlag bff;
-    public TombstoneDialog tb;
+    //public TombstoneDialog tb;
     
     public void OnPointerClick(PointerEventData eventData)
     {
         bff.is_select = true;
-        tb.charSelect = 5;
+        SelectChar.charSelect = 5;
     }
     // Use this for initialization
     void Start()

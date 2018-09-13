@@ -5,12 +5,11 @@ using UnityEngine.EventSystems;
 public class SelectBongChang : MonoBehaviour, IPointerClickHandler
 {
     public BloomFlowerFlag bff;
-    public TombstoneDialog tb;
     
     public void OnPointerClick(PointerEventData eventData)
     {
         bff.is_select = true;
-        tb.charSelect = 3;
+        SelectChar.charSelect = 3;
     }
     // Use this for initialization
     void Start()

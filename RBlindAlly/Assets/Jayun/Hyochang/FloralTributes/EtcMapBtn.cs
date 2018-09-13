@@ -7,10 +7,11 @@ public class EtcMapBtn : MonoBehaviour, IPointerClickHandler
 {
     public Canvas mc;
     public RawImage map;
-
+    public RawImage no_map;
     public void OnPointerClick(PointerEventData eventData)
     {
         mc.gameObject.SetActive(true);
+        no_map.gameObject.SetActive(false);
         map.gameObject.SetActive(true);
     }
 

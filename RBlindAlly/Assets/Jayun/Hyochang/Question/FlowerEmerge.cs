@@ -37,46 +37,78 @@ public class FlowerEmerge : MonoBehaviour {
     void Update() {
         //문제 맞춘 개수 5개 이하일때만 꽃 등장
         if (rq.right_num < 5) { 
-            if ((gps.lat >= 10)) {
+            if (rq.right_num == 0) {
                 flower_1.gameObject.SetActive(true);
                 spotNum = 0;
+                //gps.lat >= 37.5454 && gps.lat <= 37.5456 && gps.lon >=126.9609 && gps.lon <= 126.9611
+                //gps.lat >= 37.6785&& gps.lat <= 37.6787 && gps.lon >=126.7479 && gps.lon <= 126.7481
             }
-
-            if ((gps.lat >= 50))
+            else if (rq.right_num == 1)
             {
                 flower_2.gameObject.SetActive(true);
                 spotNum = 1;
+                //gps.lat >= 37.5446 && gps.lat <= 37.5448 && gps.lon >= 126.9600 && gps.lon <= 126.9602
             }
-
-            if ((gps.lat >= 50))
+            else if (rq.right_num == 2)
             {
                 flower_3.gameObject.SetActive(true);
                 spotNum = 2;
+                //gps.lat >= 37.5447 && gps.lat <= 37.5449 && gps.lon >= 126.9620 && gps.lon <= 126.9622
             }
-
-            if ((gps.lat >= 50))
+            else if (rq.right_num == 3)
             {
                 flower_4.gameObject.SetActive(true);
                 spotNum = 3;
+                //gps.lat >= 37.5448 && gps.lat <= 37.5450 && gps.lon >= 126.9606 && gps.lon <= 126.9608
             }
-
-            if ((gps.lat >= 50))
+            else if (rq.right_num == 4)
             {
                 flower_5.gameObject.SetActive(true);
                 spotNum = 4;
+                //gps.lat >= 37.5445 && gps.lat <= 37.5447 && gps.lon >= 126.9606 && gps.lon <= 126.9608
             }
-
-            if ((gps.lat >= 50.67567))
+            else if (rq.right_num == 5)
             {
                 flower_6.gameObject.SetActive(true);
                 spotNum = 5;
+                //gps.lat >= 37.5441 && gps.lat <= 37.5443 && gps.lon >= 126.9627 && gps.lon <= 126.9629
             }
-
-            if ((gps.lat >= 55.67567))
+            else if (rq.right_num == 6)
             {
-                flower_1.gameObject.SetActive(true);
+                flower_7.gameObject.SetActive(true);
                 spotNum = 6;
+                //gps.lat >= 37.5442 && gps.lat <= 37.5444 && gps.lon >= 126.9620 && gps.lon <= 126.9622
             }
+            /*
+                        if ((gps.lat >= 50))
+                        {
+                            flower_3.gameObject.SetActive(true);
+                            spotNum = 2;
+                        }
+
+                        if ((gps.lat >= 50))
+                        {
+                            flower_4.gameObject.SetActive(true);
+                            spotNum = 3;
+                        }
+
+                        if ((gps.lat >= 50))
+                        {
+                            flower_5.gameObject.SetActive(true);
+                            spotNum = 4;
+                        }
+
+                        if ((gps.lat >= 50.67567))
+                        {
+                            flower_6.gameObject.SetActive(true);
+                            spotNum = 5;
+                        }
+
+                        if ((gps.lat >= 55.67567))
+                        {
+                            flower_1.gameObject.SetActive(true);
+                            spotNum = 6;
+                        }*/
         }
         switch (spotNum)//한 장소에서 3번 틀린 경우
         {
@@ -89,6 +121,7 @@ public class FlowerEmerge : MonoBehaviour {
             case 1:
                 if (rq.countWrong[spotNum] == 2)
                     Destroy(flower_2);
+                
                 if (rq.getff)
                     Destroy(flower_2);
                 break;
@@ -162,7 +195,7 @@ public class FlowerEmerge : MonoBehaviour {
             }
         }
         */
-        if (rq.right_num >= 1)
+        if (rq.right_num == 5)
         {
             if ((gps.lat >= 10))
                 Application.LoadLevel(NextSceneString);

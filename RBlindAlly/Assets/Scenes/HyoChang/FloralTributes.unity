@@ -300,6 +300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 410447887}
   - component: {fileID: 410447886}
+  - component: {fileID: 410447888}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -322,6 +323,8 @@ MonoBehaviour:
   mc: {fileID: 863800561}
   kmb: {fileID: 690135685}
   emb: {fileID: 963964364}
+  moveGuide: {fileID: 55248272}
+  sc: {fileID: 410447888}
 --- !u!4 &410447887
 Transform:
   m_ObjectHideFlags: 0
@@ -335,6 +338,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &410447888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 410447885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 300bcaba664427b4c854be4244093237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &690135683
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mc: {fileID: 863800561}
   map: {fileID: 1820889486}
+  no_map: {fileID: 1303273274}
 --- !u!1 &863800558
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,6 +610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mc: {fileID: 863800561}
   map: {fileID: 1303273274}
+  no_map: {fileID: 1820889486}
 --- !u!1 &1303273272
 GameObject:
   m_ObjectHideFlags: 0
