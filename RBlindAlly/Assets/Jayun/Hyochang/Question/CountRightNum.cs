@@ -33,6 +33,22 @@ public class CountRightNum : MonoBehaviour {
                 break;
             case 1:
                 cn.text = "( 1 / 5 )";
+                
+                break;
+            case 2:
+                cn.text = "( 2 / 5 )";
+                
+               
+                break;
+            case 3:
+                cn.text = "( 3 / 5 )";
+                
+                break;
+            case 4:
+                cn.text = "( 4 / 5 )";
+                break;
+            case 5:
+                cn.text = "( 5 / 5 )";
                 if (time < 1.5f)
                 {
                     allflowerflag.gameObject.SetActive(true);
@@ -44,19 +60,6 @@ public class CountRightNum : MonoBehaviour {
                     Text ag = allgetText.GetComponent<Text>();
                     allgetText.text = "[효창공원 상징조형물] 앞으로 가시오.";
                 }
-                break;
-            case 2:
-                cn.text = "( 2 / 5 )";
-               
-                break;
-            case 3:
-                cn.text = "( 3 / 5 )";
-                break;
-            case 4:
-                cn.text = "( 4 / 5 )";
-                break;
-            case 5:
-                cn.text = "( 5 / 5 )";
                 //Application.LoadLevel(NextSceneString);
                 break;
             case 6:

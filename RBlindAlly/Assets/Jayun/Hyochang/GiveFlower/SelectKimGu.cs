@@ -5,12 +5,11 @@ using UnityEngine.EventSystems;
 public class SelectKimGu : MonoBehaviour, IPointerClickHandler
 {
     public BloomFlowerFlag bff;
-    public TombstoneDialog tb;
-    
+ 
     public void OnPointerClick(PointerEventData eventData)
     {
         bff.is_select = true;
-        tb.charSelect = 1;
+        SelectChar.charSelect = 1;
     }
     // Use this for initialization
     void Start()

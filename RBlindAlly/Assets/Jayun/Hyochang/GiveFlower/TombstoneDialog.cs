@@ -26,8 +26,8 @@ public class TombstoneDialog : MonoBehaviour {
     public Text bouquetText;
     public int page = 0;
 
-    public bool endDialog = false;//비석대화끝
-    public int charSelect = 0;  //1 : 김구, 2 : 윤봉길 3:이봉창 4: 안중근 5 : 백정기
+    public bool endDialog = false;//비석대화끝\
+    //public int charSelect = 0;  //1 : 김구, 2 : 윤봉길 3:이봉창 4: 안중근 5 : 백정기
 	// Use this for initialization
 	void Start () {
         tb.gameObject.SetActive(false);
@@ -47,7 +47,7 @@ public class TombstoneDialog : MonoBehaviour {
         if (bff.bloom)
         {
             tb.gameObject.SetActive(true);
-            switch (charSelect)
+            switch (SelectChar.charSelect)
             {
                 case 1:
                     if (page == 0) tt.text = "김구의 시선으로 꽃 한 송이를 본다.";
@@ -153,7 +153,7 @@ public class TombstoneDialog : MonoBehaviour {
         if (endDialog)
         {
             Text bt = bouquetText.GetComponent<Text>();
-            if (charSelect == 1)
+            if (SelectChar.charSelect == 1)
             {
                 bt.text = "무궁화 나무에 꽃을 피워주어 고맙소. 꽃다발을 가지고 백범김구 묘역에 헌화 해주시오.";
 }
