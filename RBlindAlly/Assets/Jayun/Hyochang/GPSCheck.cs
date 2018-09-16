@@ -1,23 +1,153 @@
 ﻿using System.Collections;
+using UnityEngine;
+
+public class GPSCheck : MonoBehaviour
+{
+
+    public static double first_Lat; //최초 위도
+    public static double first_Long; //최초 경도
+    public static double current_Lat; //현재 위도
+    public static double current_Long; //현재 경도
+
+    private static WaitForSeconds second;
+
+    private static bool gpsStarted = false;
+
+    private static LocationInfo location;
+
+    private void Awake()
+    {
+        second = new WaitForSeconds(1.0f);
+    }
+
+    IEnumerator Start()
+    {
+        // 유저가 GPS 사용중인지 최초 체크
+        if (!Input.location.isEnabledByUser)
+        {
+            Debug.Log("GPS is not enabled");
+            yield break;
+        }
+
+        //GPS 서비스 시작
+        Input.location.Start();
+        Debug.Log("Awaiting initialization");
+
+        //활성화될 때 까지 대기
+        int maxWait = 20;
+        while (Input.location.status == LocationServiceStatus.Initializing && maxWait > 0)
+        {
+            yield return second;
+            maxWait -= 1;
+        }
+
+        //20초 지날경우 활성화 중단
+        if (maxWait < 1)
+        {
+            Debug.Log("Timed out");
+            yield break;
+        }
+
+        //연결 실패
+        if (Input.location.status == LocationServiceStatus.Failed)
+        {
+            Debug.Log("Unable to determine device location");
+            yield break;
+
+        }
+        else
+        {
+            //접근 허가됨, 최초 위치 정보 받아오기
+            location = Input.location.lastData;
+            first_Lat = location.latitude * 1.0d;
+            first_Long = location.longitude * 1.0d;
+            gpsStarted = true;
+
+            //현재 위치 갱신
+            while (gpsStarted)
+            {
+                location = Input.location.lastData;
+                current_Lat = location.latitude * 1.0d;
+                current_Long = location.longitude * 1.0d;
+                yield return second;
+            }
+        }
+    }
+
+    //위치 서비스 종료
+    public static void StopGPS()
+    {
+        if (Input.location.isEnabledByUser)
+        {
+            gpsStarted = false;
+            Input.location.Stop();
+        }
+    }
+}
+
+
+
+
+/*
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GPSCheck : MonoBehaviour
 {
+   public static GPSCheck Instance { set; get; }
 
     public float lat;
     public float lon;
     // Use this for initialization
     void Start()
     {
-        Input.location.Start();
+        StartCoroutine(StartLocationService());
+        DontDestroyOnLoad(gameObject);
+        //Input.location.Start();
     }
 
+    private IEnumerator StartLocationService()
+    {
+        if (Input.location.isEnabledByUser)
+        {
+            Debug.Log("User has not enabled GPS");
+            yield break;
+
+        }
+
+        Input.location.Start();
+
+        int maxWait = 20;
+        while(Input.location.status == LocationServiceStatus.Initializing && maxWait > 0)
+        {
+            yield return new WaitForSeconds(1);
+            maxWait--;
+
+        }
+        if (maxWait <= 0)
+        {
+            Debug.Log("Timed out");
+            yield break;
+        }
+
+        if (Input.location.status == LocationServiceStatus.Failed)
+        {
+            Debug.Log("Unable to determin device location");
+            yield break;
+        }
+
+        lat = Input.location.lastData.latitude;
+        lon = Input.location.lastData.longitude;
+
+        yield break;
+    }
+    /*
     // Update is called once per frame
     void Update()
     {
-        UpdateLocation();
+       // UpdateLocation();
     }
 
     private void UpdateLocation()
@@ -31,4 +161,4 @@ public class GPSCheck : MonoBehaviour
     }
 
 
-}
+}*/

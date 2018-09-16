@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CountRightNum : MonoBehaviour {
     public Text countNum;
     public RandomQuiz rq;
-
+    public GPSCheck gps;
     public RawImage allflowerflag;
     public Text allgetText;
 
@@ -29,7 +29,7 @@ public class CountRightNum : MonoBehaviour {
         switch (rq.right_num)
         {
             case 0:
-                cn.text = "( 0 / 5 )";
+                cn.text = GPSCheck.current_Lat.ToString();
                 break;
             case 1:
                 cn.text = "( 1 / 5 )";

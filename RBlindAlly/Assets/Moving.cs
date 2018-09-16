@@ -6,7 +6,6 @@ public class Moving : MonoBehaviour {
     public float speed = 1.0f;
     Transform trans;
     bool move = false;
-    public Library_box_Tracking lbt;
   
 
     // Use this for initialization
@@ -24,7 +23,6 @@ public class Moving : MonoBehaviour {
 
                 Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
                 trans.Translate(touchDeltaPosition.x * speed, 0, 0);
-                lbt.grass += 1;
          
                 move = false;
 
