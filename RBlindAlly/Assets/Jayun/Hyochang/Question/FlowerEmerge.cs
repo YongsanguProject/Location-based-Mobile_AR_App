@@ -37,7 +37,7 @@ public class FlowerEmerge : MonoBehaviour {
     void Update() {
         //문제 맞춘 개수 5개 이하일때만 꽃 등장
         if (rq.right_num < 5) { 
-            if (rq.right_num == 0) {
+            if (GPSCheck.current_Lat>=10) {
                 flower_1.gameObject.SetActive(true);
                 spotNum = 0;
                 //gps.lat >= 37.5454 && gps.lat <= 37.5456 && gps.lon >=126.9609 && gps.lon <= 126.9611
@@ -195,10 +195,11 @@ public class FlowerEmerge : MonoBehaviour {
             }
         }
         */
-        if (rq.right_num == 5)
+        if (rq.right_num ==0)
         {
-            if ((gps.lat >= 10))
+            if (GPSCheck.current_Lat >= 10) {
                 Application.LoadLevel(NextSceneString);
+            }
         }
 
 
