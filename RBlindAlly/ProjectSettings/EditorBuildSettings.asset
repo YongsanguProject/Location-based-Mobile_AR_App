@@ -41,19 +41,19 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Ending.unity
     guid: 6ee92778fff6d7e4f86a34d454e8fbfc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HyoChang/HyochangIntro.unity
     guid: 47b04aa173e00f54ba71a8e1a263caa8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HyoChang/GrowTree.unity
     guid: 079dff76f734bd64e98ff38a9ece4075
   - enabled: 1
     path: Assets/Scenes/HyoChang/Question.unity
     guid: 54e840bc4d32c7048be7dd71308ec805
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HyoChang/GiveFlower.unity
     guid: 6229aff0de42a9446ad8c4799146bcf4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HyoChang/FloralTributes.unity
     guid: 11aa2f14202247f469a9760cdb3df224
   m_configObjects: {}

@@ -29,7 +29,7 @@ public class CountRightNum : MonoBehaviour {
         switch (rq.right_num)
         {
             case 0:
-                cn.text = GPSCheck.current_Lat.ToString();
+                cn.text = "( 0 / 5 )";
                 break;
             case 1:
                 cn.text = "( 1 / 5 )";
