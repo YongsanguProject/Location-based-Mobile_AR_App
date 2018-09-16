@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class WindBlow : MonoBehaviour {
     public TouchTree tt;
-    public string NextSceneString;
+    
     private float delta = 12f;
 
+    public bool start_dialog = false;
     public bool is_blow;
 	// Use this for initialization
 	void Start () {
@@ -28,8 +29,8 @@ public class WindBlow : MonoBehaviour {
                 is_blow = true;
             }
 
-            if (rt.position.x < -900)
-                Application.LoadLevel(NextSceneString);
+            if (rt.position.x < -900) start_dialog = true;
+                //Application.LoadLevel(NextSceneString);
         }
 	}
 }

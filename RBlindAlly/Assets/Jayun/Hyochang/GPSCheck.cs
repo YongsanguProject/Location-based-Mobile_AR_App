@@ -30,7 +30,7 @@ public class GPSCheck : MonoBehaviour
         }
 
         //GPS 서비스 시작
-        Input.location.Start();
+        Input.location.Start(5f,10f);
         Debug.Log("Awaiting initialization");
 
         //활성화될 때 까지 대기
