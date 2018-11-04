@@ -86,13 +86,15 @@ public class RandomQuiz : MonoBehaviour
                 cv.gameObject.SetActive(true);
                 Text qt = qtext.GetComponent<Text>();
                 qt.text = "문        제";
+                //문제 이상하게 나오는거 방지
+                Text t = text.GetComponent<Text>();
+                t.text = "";
                 right.gameObject.SetActive(true);
                 wrong.gameObject.SetActive(true);
                 System.Random random = new System.Random();
                 num = random.Next(0, quiz.Length);
                 if (!check[num])            //아직 나오지않은 문제면
                 {
-                    Text t = text.GetComponent<Text>();
                     check[num] = true;              //나온 문제로 check
                     answerb = answer[num];          //정답 true/false
                     t.text = quiz[num];             //문제

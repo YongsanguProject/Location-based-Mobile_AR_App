@@ -6,9 +6,11 @@ using UnityEngine.EventSystems;
 public class CheckPark : MonoBehaviour, IPointerClickHandler
 {
     public string NextSceneString;
+    public AudioSource ParkSound1;
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        ParkSound1.GetComponent<AudioSource>().Play();
         Application.LoadLevel(NextSceneString);
     }
 

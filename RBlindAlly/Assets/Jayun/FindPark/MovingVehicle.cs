@@ -8,11 +8,12 @@ public class MovingVehicle : MonoBehaviour {
     public RawImage Vehicle2;
     public RawImage Vehicle3;
     float delta = 1f;
-
+    int sound = 0;
     public bool is_stop;
     public bool destroy = false;
     public bool check;
     public int rot;
+    public AudioSource vehicle_sound;
 	// Use this for initialization
 	void Start () {
  
@@ -60,8 +61,17 @@ public class MovingVehicle : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         RectTransform vt1 = Vehicle.GetComponent<RectTransform>();
-        if (vt1.position.x >= 300f) moveForward(Vehicle);
-        else{
+        if (vt1.position.x >= 300f)
+        {
+            moveForward(Vehicle);
+            if ( sound == 10) {
+                vehicle_sound.GetComponent<AudioSource>().Play();
+            }
+            sound++;
+            
+        }
+        else
+        {
             stopping(Vehicle);
             is_stop = true;
             destroy = true;

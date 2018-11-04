@@ -6,9 +6,10 @@ public class SelectNet : MonoBehaviour {
 
     //public bool is_appear = true; 
     // Use this for initialization
+
     public bool catch_net;
     void Start()
-    {
+    { 
         catch_net = false;
     }
 
@@ -20,7 +21,7 @@ public class SelectNet : MonoBehaviour {
         {
             if (hit.transform.tag == "Net")
             {
-                catch_net = true;
+                catch_net = true;       //뜰채 획득
             }
         }
     }

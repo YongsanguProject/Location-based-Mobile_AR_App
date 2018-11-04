@@ -37,79 +37,77 @@ public class FlowerEmerge : MonoBehaviour {
     void Update() {
         //문제 맞춘 개수 5개 이하일때만 꽃 등장
         if (rq.right_num < 5) { 
-            if (rq.right_num == 0) {
+            if (GPSCheck.current_Lat >= 37.5452 && GPSCheck.current_Lat < 37.5454 && GPSCheck.current_Long >= 126.9609 && GPSCheck.current_Long <= 126.9611) {//광복70주년광장
                 flower_1.gameObject.SetActive(true);
                 spotNum = 0;
                 //gps.lat >= 37.5454 && gps.lat <= 37.5456 && gps.lon >=126.9609 && gps.lon <= 126.9611
                 //gps.lat >= 37.6785&& gps.lat <= 37.6787 && gps.lon >=126.7479 && gps.lon <= 126.7481
-                //rq.right_num == 0 && GPSCheck.current_Lat >= 37.675 && GPSCheck.current_Lat <= 37.679 && GPSCheck.current_Long >= 126.744 && GPSCheck.current_Long <= 126.76
+
+                //GPSCheck.current_Lat >= 37.5453 && GPSCheck.current_Lat < 37.5455 && GPSCheck.current_Long >= 126.960 && GPSCheck.current_Long <= 126.962
+
+                //&& GPSCheck.current_Lat >= 37.675 && GPSCheck.current_Lat <= 37.679 && GPSCheck.current_Long >= 126.74 && GPSCheck.current_Long <= 126.76
             }
-            else if (rq.right_num == 1 )
+            else if (GPSCheck.current_Lat >= 37.5450 && GPSCheck.current_Lat < 37.5452 && GPSCheck.current_Long >= 126.9596 && GPSCheck.current_Long <= 126.9598)//백범김구묘역
             {
                 flower_2.gameObject.SetActive(true);
                 spotNum = 1;
-                //rq.right_num == 1 && GPSCheck.current_Lat >= 37.541 && GPSCheck.current_Lat <= 37.545 && GPSCheck.current_Long >= 126.957 && GPSCheck.current_Long <= 126.963
+
+                //GPSCheck.current_Lat >= 37.5446 && GPSCheck.current_Lat < 37.5448 && GPSCheck.current_Long >= 126.959 && GPSCheck.current_Long <= 126.961
+
+
+                //&& GPSCheck.current_Lat >= 37.541 && GPSCheck.current_Lat <= 37.545 && GPSCheck.current_Long >= 126.95 && GPSCheck.current_Long < 126.97
             }
-            else if (rq.right_num == 2)
+            else if (GPSCheck.current_Lat >= 37.5446 && GPSCheck.current_Lat < 37.5448 && GPSCheck.current_Long >= 126.9618 && GPSCheck.current_Long <= 126.9621)//상징조형물
             {
                 flower_3.gameObject.SetActive(true);
                 spotNum = 2;
-                //gps.lat >= 37.5447 && gps.lat <= 37.5449 && gps.lon >= 126.9620 && gps.lon <= 126.9622
+
+                //GPSCheck.current_Lat >= 37.5447 && GPSCheck.current_Lat < 37.5449 && GPSCheck.current_Long >= 126.961 && GPSCheck.current_Long < 126.963
+
+
+                //&& GPSCheck.current_Lat >= 37.541 && GPSCheck.current_Lat <= 37.547 && GPSCheck.current_Long >= 126.96 && GPSCheck.current_Long <= 126.97
             }
-            else if (rq.right_num == 3)
+            else if (GPSCheck.current_Lat >= 37.5449 && GPSCheck.current_Lat <= 37.5452 && GPSCheck.current_Long >= 126.959 && GPSCheck.current_Long <= 126.961)//의열사앞
             {
                 flower_4.gameObject.SetActive(true);
                 spotNum = 3;
-                //gps.lat >= 37.5448 && gps.lat <= 37.5450 && gps.lon >= 126.9606 && gps.lon <= 126.9608
+
+                //GPSCheck.current_Lat >= 37.5448 && GPSCheck.current_Lat < 37.5450 && GPSCheck.current_Long >= 126.959 && GPSCheck.current_Long < 126.961
+
+
+                //&& GPSCheck.current_Lat >= 37.541 && GPSCheck.current_Lat<=37.547 && GPSCheck.current_Long>= 126.95 && GPSCheck.current_Long<=126.97
             }
-            else if (rq.right_num == 4)
+            else if (GPSCheck.current_Lat >= 37.5445 && GPSCheck.current_Lat < 37.5447 && GPSCheck.current_Long >= 126.959 && GPSCheck.current_Long < 126.961)//이봉창의사동상
             {
                 flower_5.gameObject.SetActive(true);
                 spotNum = 4;
+
+                //GPSCheck.current_Lat >= 37.5445 && GPSCheck.current_Lat < 37.5447 && GPSCheck.current_Long >= 126.959 && GPSCheck.current_Long < 126.961
+
+
                 //gps.lat >= 37.5445 && gps.lat <= 37.5447 && gps.lon >= 126.9606 && gps.lon <= 126.9608
             }
-            else if (rq.right_num == 5)
+            else if (GPSCheck.current_Lat >= 37.5442 && GPSCheck.current_Lat < 37.5444 && GPSCheck.current_Long >= 126.9626 && GPSCheck.current_Long < 126.9629)//임정요인
             {
                 flower_6.gameObject.SetActive(true);
                 spotNum = 5;
+
+                //GPSCheck.current_Lat >= 37.5441 && GPSCheck.current_Lat < 37.5443 && GPSCheck.current_Long >= 126.9625 && GPSCheck.current_Long < 126.963
+
+
                 //gps.lat >= 37.5441 && gps.lat <= 37.5443 && gps.lon >= 126.9627 && gps.lon <= 126.9629
             }
-            else if (rq.right_num == 6)
+            else if (GPSCheck.current_Lat >= 37.5443 && GPSCheck.current_Lat < 37.5444 && GPSCheck.current_Long >= 126.961 && GPSCheck.current_Long < 126.9625)//효공정문
             {
                 flower_7.gameObject.SetActive(true);
                 spotNum = 6;
+
+                //GPSCheck.current_Lat >= 37.5442 && GPSCheck.current_Lat < 37.5444 && GPSCheck.current_Long >= 126.961 && GPSCheck.current_Long < 126.9625
+
+
                 //gps.lat >= 37.5442 && gps.lat <= 37.5444 && gps.lon >= 126.9620 && gps.lon <= 126.9622
             }
-            /*
-                        if ((gps.lat >= 50))
-                        {
-                            flower_3.gameObject.SetActive(true);
-                            spotNum = 2;
-                        }
 
-                        if ((gps.lat >= 50))
-                        {
-                            flower_4.gameObject.SetActive(true);
-                            spotNum = 3;
-                        }
-
-                        if ((gps.lat >= 50))
-                        {
-                            flower_5.gameObject.SetActive(true);
-                            spotNum = 4;
-                        }
-
-                        if ((gps.lat >= 50.67567))
-                        {
-                            flower_6.gameObject.SetActive(true);
-                            spotNum = 5;
-                        }
-
-                        if ((gps.lat >= 55.67567))
-                        {
-                            flower_1.gameObject.SetActive(true);
-                            spotNum = 6;
-                        }*/
         }
         switch (spotNum)//한 장소에서 3번 틀린 경우
         {
@@ -157,48 +155,11 @@ public class FlowerEmerge : MonoBehaviour {
                     Destroy(flower_7);
                 break;
         }
-        /*
-        if (rq.getff)
+       
+        if (rq.right_num ==5)
         {
-            if ((gps.lat >= 10))
-            {
-                Destroy(flower_1);
-            }
-
-            if ((gps.lat >= 10))
-            {
-                Destroy(flower_2);
-            }
-
-            if ((gps.lat >= 50))
-            {
-                Destroy(flower_3);
-            }
-
-            if ((gps.lat >= 43.67567))
-            {
-                Destroy(flower_4);
-            }
-
-            if ((gps.lat >= 45.67567))
-            {
-                Destroy(flower_5);
-            }
-
-            if ((gps.lat >= 50.67567))
-            {
-                Destroy(flower_6);
-            }
-
-            if ((gps.lat >= 55.67567))
-            {
-                Destroy(flower_7);
-            }
-        }
-        */
-        if (rq.right_num ==4)
-        {
-            if (GPSCheck.current_Lat >= 10) {
+            if (GPSCheck.current_Lat >= 37.5446 && GPSCheck.current_Lat < 37.5448 && GPSCheck.current_Long >= 126.9618 && GPSCheck.current_Long <= 126.9621) {//상징조형물
+                //GPSCheck.current_Lat >= 37.5447 && GPSCheck.current_Lat < 37.5449 && GPSCheck.current_Long >= 126.961 && GPSCheck.current_Long < 126.963
                 Application.LoadLevel(NextSceneString);
             }
         }

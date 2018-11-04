@@ -6,9 +6,10 @@ using UnityEngine.EventSystems;
 public class CheckNotPark2 : MonoBehaviour, IPointerClickHandler{
 
     public CheckWrong cw;
-
+    public AudioSource ParkSound3;
     public void OnPointerClick(PointerEventData eventData)
     {
+        ParkSound3.GetComponent<AudioSource>().Play();
         cw.wrong2 = true;
     }
     // Use this for initialization
