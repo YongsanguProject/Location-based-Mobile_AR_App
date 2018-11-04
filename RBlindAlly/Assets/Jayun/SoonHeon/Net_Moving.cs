@@ -7,10 +7,11 @@ using System;
 public class Net_Moving : MonoBehaviour {
 
     float delta = 5f;//매 프레임마다 움직일 양
-
+    public bool scoop;  //뜰채로 푸기
     public bool get_net;
     public SelectBox_Pond box;
     public SelectNet net;
+    public DragNet dn;
 	// Use this for initialization
 	void Start () {
 
@@ -21,7 +22,7 @@ public class Net_Moving : MonoBehaviour {
 	//
     void moveControl()
     {
-        if (!net.catch_net)
+        if (!net.catch_net)//뜰채 자동 움직임 //뜰채 획득 전까지
         {
             Transform t = GetComponent<Transform>();
             t.position = new Vector3(t.position.x + delta
@@ -49,11 +50,15 @@ public class Net_Moving : MonoBehaviour {
                                         , randomY);
             }
         }
-        else
-        {
-            Transform t = GetComponent<Transform>();
-            get_net = true;
-            t.position = new Vector3(-300, 95.5f, 0);
+        else{   //뜰채 획득
+            if (!scoop) {   // 
+                Transform t = GetComponent<Transform>();
+                get_net = true;
+                t.position = new Vector3(0, 0,-400f);
+                dn.dragging = true;//드래그 가능하도록
+                scoop = true;
+            }
+            
         }
         
     }

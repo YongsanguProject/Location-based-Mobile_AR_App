@@ -10,6 +10,8 @@ public class Net_Dialog : MonoBehaviour {
     public SelectNet net;
     public Text how_to;
     public Catch_Box cat;
+
+
     // Use this for initialization
     void Start()
     {
@@ -27,11 +29,11 @@ public class Net_Dialog : MonoBehaviour {
 
     void Update()
     {
-        if (net.catch_net)//뜰채 안내 메세지
+        if (net.catch_net)//뜰채 안내 메세지(뜰책 획득 후)
         {
             RawImage gn = GetNet.GetComponent<RawImage>();
             gn.enabled = true;
-            Destroy(GetNet, 2f);
+            Destroy(GetNet, 1.5f);
             Text t = how_to.GetComponent<Text>();
             t.enabled = true;
         }
@@ -40,7 +42,7 @@ public class Net_Dialog : MonoBehaviour {
         {
             RawImage ni = NetInfo.GetComponent<RawImage>();
             ni.enabled = true;
-            Destroy(NetInfo, 2f);
+            Destroy(NetInfo, 1.5f);
         }
 
       

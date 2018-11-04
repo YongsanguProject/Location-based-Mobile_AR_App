@@ -27,7 +27,9 @@ public class CheckPerson : MonoBehaviour {
 	void Update () {
         //MoveGuide수정하기(김구일때 그 외일때), MapBtn도 수정하기
         Text mg = moveGuide.GetComponent<Text>();
-        if (GPSCheck.current_Lat >= 10 && SelectChar.charSelect == 1)    //백범김구
+        if (GPSCheck.current_Lat >= 37.5450 && GPSCheck.current_Lat < 37.5452 && GPSCheck.current_Long >= 126.9596 && GPSCheck.current_Long <= 126.9598 && SelectChar.charSelect == 1)
+        //GPSCheck.current_Lat >= 37.5451 && GPSCheck.current_Lat < 37.5453 && GPSCheck.current_Long >= 126.958 && GPSCheck.current_Long < 126.960 && SelectChar.charSelect == 1
+        //백범김구37.545253, 126.959656
         {
             mg.text = "상석을 비추시오";
             
@@ -46,7 +48,9 @@ public class CheckPerson : MonoBehaviour {
                 mf.is_emerge = true;
             }
 
-        } else if (GPSCheck.current_Lat >= 10) {                          //그 외
+        } else if (SelectChar.charSelect!= 1 && GPSCheck.current_Lat >= 37.5451 && GPSCheck.current_Lat < 37.54535 && GPSCheck.current_Long >= 126.9613 && GPSCheck.current_Long < 126.9616) {
+            //GPSCheck.current_Lat >= 37.5447 && GPSCheck.current_Lat < 37.54449 && GPSCheck.current_Long >= 126.960 && GPSCheck.current_Long < 126.962
+            //그 외  37.544875, 126.96168
             mg.text = "상석을 비추시오";
 
             mc.gameObject.SetActive(false);
