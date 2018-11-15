@@ -39,7 +39,8 @@ public class IntroDialog : MonoBehaviour {
             case 3:
                 guide.gameObject.SetActive(true);
                 dc.gameObject.SetActive(false);
-                if (GPSCheck.current_Lat >= 37.5449 && GPSCheck.current_Lat <= 37.5452 && GPSCheck.current_Long >= 126.959 && GPSCheck.current_Long <= 126.961)      //37.545069, 126.960717
+                if (GPSCheck.current_Lat >= 37.54507 && GPSCheck.current_Lat <=37.5454 && GPSCheck.current_Long>=126.9603 && GPSCheck.current_Long<=126.9608)    //37.545069, 126.960717
+     //     37.5449 && GPSCheck.current_Lat <= 37.5452 && GPSCheck.current_Long >= 126.959 && GPSCheck.current_Long <= 126.961                                                                                                                                       //37.5449 && GPSCheck.current_Lat <= 37.5452 && GPSCheck.current_Long >= 126.959 && GPSCheck.current_Long <= 126.961                                                                                                                    //37.5449 && GPSCheck.current_Lat <= 37.5452 && GPSCheck.current_Long >= 126.959 && GPSCheck.current_Long <= 126.961
                 {
                     //GPSCheck.current_Lat >= 37.5449 && GPSCheck.current_Lat <= 37.5452 && GPSCheck.current_Long >= 126.959 && GPSCheck.current_Long <= 126.961
                     Application.LoadLevel(NextSceneString);

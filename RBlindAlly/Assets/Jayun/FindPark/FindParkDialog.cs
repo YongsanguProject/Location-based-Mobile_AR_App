@@ -16,6 +16,10 @@ public class FindParkDialog : MonoBehaviour {
     public RawImage MiniPark;
     int delta = 10;
 
+    public bool drop = false;
+
+    public AudioSource dropdownsound;
+
     float infoTime = 0;
 	// Use this for initialization
 	void Start () {
@@ -47,6 +51,11 @@ public class FindParkDialog : MonoBehaviour {
 
     void DropDown()
     {
+        if (!drop){
+            dropdownsound.GetComponent<AudioSource>().Play();
+            drop = true;
+        }
+
         RawImage rpi = ParkInfo.GetComponent<RawImage>();
         rpi.enabled = true;
         Text t3 = text3.GetComponent<Text>();
